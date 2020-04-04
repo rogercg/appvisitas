@@ -1,3 +1,4 @@
+import 'package:app_instagram/routes/router-constans.dart';
 import 'package:app_instagram/styles/style.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -18,6 +19,9 @@ class _LoginViewState extends State<LoginView> {
     super.initState();
     _googleSignIn.onCurrentUserChanged.listen((GoogleSignInAccount account) {
       print(account);
+      if(account!=null){
+        Navigator.pushNamed(context, HomeViewRoute);
+      }
       account.authentication.then((GoogleSignInAuthentication value){
         print(value);
       });
@@ -52,14 +56,62 @@ class _LoginViewState extends State<LoginView> {
 
   Widget _body({double screenWidth, double screenHeight}) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        // Image.asset('assets/images/logo.png', height: 75, alignment: Alignment.center, fit: BoxFit.fill),
-        SizedBox(height: 100),
-        Text("Ingresa", style: TextStyle(color: Colors.white, fontSize: 18)),
-        SizedBox(height: 100),
-        _btnSignGoogle(screenHeigh: screenHeight, screenWidth: screenWidth),
-        SizedBox(height: 25)
+        Padding(
+          padding: EdgeInsets.only(top: screenHeight * 0.30),
+          child: Column(
+            children: <Widget>[
+                Text("Instamoment", style: TextStyle(color: Colors.black87, fontSize: 65, fontFamily: 'Billabong')),
+                SizedBox(height: screenHeight*0.1),
+                _btnSignGoogle(screenHeigh: screenHeight, screenWidth: screenWidth),
+                SizedBox(height: 7.5),
+                Divider(indent: 5, thickness: 1),
+                SizedBox(height: 7.5),
+                Container(
+                  width: screenWidth - 60,
+                  child: InkWell(
+                    onTap: (){},
+                    child: Text(
+                      'Registrarte con tu correo electrónico o número de teléfono', 
+                      style: TextStyle(
+                        color: Color.fromRGBO(66, 133, 244, 1), 
+                        fontWeight: FontWeight.bold, fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+            ],
+          ),
+        ),
+        Column(
+          children: <Widget>[
+            Divider(indent: 5, thickness: 1),
+            InkWell(
+              onTap: (){},
+              child: RichText(
+                softWrap: true,
+                overflow: TextOverflow.visible,
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "¿Ya tienes una cuenta? ",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextSpan(
+                      text: "Inicia sesión",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 15)
+          ],
+        )
       ],
     );
   }
@@ -69,8 +121,8 @@ class _LoginViewState extends State<LoginView> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          width: 60,
-          height: 60,
+          width: 55,
+          height: 55,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
@@ -79,18 +131,17 @@ class _LoginViewState extends State<LoginView> {
             ),
             border: Border.all(
               color: Color.fromRGBO(66, 133, 244, 1),
-              width: 3, //                   <--- border width here
+              width: 3,
             )
           ),
-          child: Container(
-            width: 10,
-            height: 10,
-            child: Image.asset('assets/images/google.png', fit: BoxFit.fill)
-          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Image.asset('assets/images/google.png', fit: BoxFit.fill),
+          )
         ),
         Container(
-          width: 250,//screenWidth*0.75,
-          height: 60,//screenHeigh*0.12,
+          width: screenWidth - 120,
+          height: 55,//screenHeigh*0.12,
           decoration: BoxDecoration(
             color: Color.fromRGBO(66, 133, 244, 1),
             borderRadius: BorderRadius.only(

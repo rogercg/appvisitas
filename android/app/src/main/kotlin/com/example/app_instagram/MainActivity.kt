@@ -1,4 +1,4 @@
-package com.example.app_instagram
+package com.rogercg.appinsta
 
 import android.os.Bundle
 
