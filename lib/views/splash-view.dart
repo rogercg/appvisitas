@@ -11,7 +11,7 @@ class SplashView extends StatelessWidget {
         brightness: Brightness.light,
         centerTitle: true,
         title: Text(
-          "Instagram",
+          "Splash",
           style: TextStyle(
             color: Colors.black,
           ),

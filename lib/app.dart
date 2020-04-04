@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: HomeViewRoute,
+      initialRoute: LoginViewRoute,
       onGenerateRoute: generateRoute,
     );
   }

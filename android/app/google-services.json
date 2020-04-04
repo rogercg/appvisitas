@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "575598933020",
+    "firebase_url": "https://appinstagram-1cd27.firebaseio.com",
+    "project_id": "appinstagram-1cd27",
+    "storage_bucket": "appinstagram-1cd27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575598933020:android:b21b3ae67b2033112e9bd9",
+        "android_client_info": {
+          "package_name": "com.rogercg.appinsta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575598933020-a8cdm6qrhkdo407sgirkjf5o02nlafvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5yduUQxWoqh5A5KSEWv-Ooyex3BkkqOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575598933020-a8cdm6qrhkdo407sgirkjf5o02nlafvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
