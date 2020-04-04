@@ -1,10 +1,10 @@
-import 'package:app_instagram/post.dart';
-import 'package:app_instagram/story.dart';
+import 'package:app_instagram/model/post-model.dart';
+import 'package:app_instagram/model/story-model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class Feed extends StatelessWidget {
-  List<Story> _stories = [
+  final List<Story> _stories = [
     Story(
         "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         "Jazmin"),
@@ -40,7 +40,7 @@ class Feed extends StatelessWidget {
         "Litzy")
   ];
 
-  List<Post> posts = [
+  final List<Post> posts = [
     Post(
         username: "Brianne",
         userImage:
