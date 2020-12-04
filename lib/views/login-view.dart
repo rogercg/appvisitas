@@ -66,8 +66,6 @@ class _LoginViewState extends State<LoginView> {
                 SizedBox(height: screenHeight*0.1),
                 _btnSignGoogle(screenHeigh: screenHeight, screenWidth: screenWidth),
                 SizedBox(height: 7.5),
-                Divider(indent: 5, thickness: 1),
-                SizedBox(height: 7.5),
                 Container(
                   width: screenWidth - 60,
                   child: InkWell(
@@ -82,13 +80,10 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                 ),
-            ],
-          ),
-        ),
-        Column(
-          children: <Widget>[
-            Divider(indent: 5, thickness: 1),
-            InkWell(
+                SizedBox(height: 7.5),
+                Divider(indent: 5, thickness: 1),
+                SizedBox(height: 7.5),
+                InkWell(
               onTap: (){},
               child: RichText(
                 softWrap: true,
@@ -108,8 +103,29 @@ class _LoginViewState extends State<LoginView> {
                   ],
                 ),
               ),
+            )
+            ],
+          ),
+        ),
+        Column(
+          children: <Widget>[
+            Divider(indent: 5, thickness: 1),
+            InkWell(
+              onTap: (){},
+              child: RichText(
+                softWrap: true,
+                overflow: TextOverflow.visible,
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Instamoment from rogercg",
+                      style: TextStyle(color: Colors.black),
+                    )
+                  ],
+                ),
+              ),
             ),
-            SizedBox(height: 15)
+            SizedBox(height: 5)
           ],
         )
       ],

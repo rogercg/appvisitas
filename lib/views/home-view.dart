@@ -28,10 +28,8 @@ class _HomeViewState extends State<HomeView> {
         brightness: Brightness.light,
         centerTitle: true,
         title: Text(
-          "Instagram",
-          style: TextStyle(
-            color: Colors.black,
-          ),
+          "Instamoment",
+          style: TextStyle(color: Colors.black87, fontSize: 24, fontFamily: 'Billabong'),
         ),
         leading: IconButton(
           onPressed: () {},
